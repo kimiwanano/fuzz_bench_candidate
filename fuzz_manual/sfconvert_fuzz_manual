@@ -1,0 +1,5 @@
+#AFL
+CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared
+make all
+mkdir fuzz_in fuzz_out
+afl-fuzz -i fuzz_in -o fuzz_out ./sfcommands/sfconvert @@ out.mp3 format aiff
