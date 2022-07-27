@@ -1,3 +1,4 @@
+# AFL
 wget http://libarchive.org/downloads/libarchive-3.6.1.tar.gz
 tar -xvf libarchive-3.6.1.tar.gz
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure –disable-shared 
