@@ -1,0 +1,6 @@
+# AFL
+CC=afl-clang-fast CXX=afl-clang-fast++ make all
+cd fuzzing
+CC=afl-clang-fast CXX=afl-clang-fast++ make all
+mkdir fuzz_in fuzz_out
+afl-fuzz -m none -i fuzz_in/ -o fuzz_out/ -x json.dict ./cjson @@
