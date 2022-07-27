@@ -1,0 +1,7 @@
+# AFL
+apt-get install -y pkg-config
+apt-get install -y libfontconfig1-dev
+CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared 
+make all
+mkdir fuzz_in fuzz_out
+afl-fuzz -m none -x pdf.dict -i fuzz_in/ -o fuzz_out/ ./ utils/pdftohtml @@
