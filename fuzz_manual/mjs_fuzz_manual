@@ -1,0 +1,4 @@
+#AFL
+CC=afl-clang-fast CXX=afl-clang-fast++ -DMJS_MAIN mjs.c -ldl -g -o mjs-bin
+mkdir fuzz_in fuzz_out
+afl-fuzz -i fuzz_in -o fuzz_out ./mjs-bin @@ 
