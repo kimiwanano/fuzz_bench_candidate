@@ -1,0 +1,8 @@
+#AFL
+apt-get install -y libpng-dev 
+apt-get install -y zlib1g-dev
+apt-get install xmlto 
+CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared
+make all
+mkdir fuzz_in fuzz_out
+afl-fuzz -m none -i fuzz_in -o fuzz_out ./gif2png @@
