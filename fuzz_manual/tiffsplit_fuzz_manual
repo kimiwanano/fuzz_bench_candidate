@@ -1,0 +1,5 @@
+#AFL
+CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared 
+make all
+mkdir fuzz_in fuzz_out 
+afl-fuzz -i fuzz_in_libtiff -o ./tools/tiffsplit @@
