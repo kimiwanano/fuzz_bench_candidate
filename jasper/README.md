@@ -10,4 +10,4 @@ mkdir BUILD
 cd BUILD/    
 CC=afl-clang-fast CXX=afl-clang-fast++ cmake -G "Unix Makefiles" ..    
 * Reproduce:      
-afl-fuzz -m none -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl/jasper --input @@ --output test.bmp --output-format bmp
+afl-fuzz -m none -b 45 -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl/jasper --input @@ --output test.bmp --output-format bmp
