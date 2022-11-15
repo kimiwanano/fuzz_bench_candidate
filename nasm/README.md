@@ -12,3 +12,5 @@ CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-sha
 make all
 * Reproduce:    
 afl-fuzz -m none -b 44 -i afl-fuzz/in/ -o afl-fuzz/out/ ./nasm -f bin @@ -o ./tmp
+
+![image](https://user-images.githubusercontent.com/76025773/201922459-8e13c1bf-4ead-4b06-bc15-43f4066eff11.png)
