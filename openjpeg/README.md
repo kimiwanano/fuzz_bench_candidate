@@ -13,4 +13,6 @@ cd build/
 CC=afl-clang-fast CXX=afl-clang-fast++ cmake .. -DCMAKE_BUILD_TYPE=Release    
 make all    
 * Reproduce:    
-afl-fuzz -m none -b 41 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/bin/opj_decompress -i @@ -o ./tmp.png
+afl-fuzz -m none -b 41 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/bin/opj_decompress -i @@ -o ./tmp.png    
+
+![image](https://user-images.githubusercontent.com/76025773/201916946-5d7d9c84-bd36-4e41-9a65-1ec4c633c22e.png)
