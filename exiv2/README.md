@@ -11,3 +11,5 @@ CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-sta
 make all
 * Reproduce:      
 afl-fuzz -m none -b 46 -i afl-fuzz/in/ -o afl-fuzz/out/ ./bin/exiv2 -pX @@   
+
+![image](https://user-images.githubusercontent.com/76025773/201923202-15f00db5-1b40-4509-a6b7-01e26537f3b3.png)
