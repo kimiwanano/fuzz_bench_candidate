@@ -12,4 +12,6 @@ cd build/
 CC=afl-clang-fast CXX=afl-clang-fast++ cmake -DCMAKE_BUILD_TYPE=Release ..    
 make all
 * Reproduce:    
-afl-fuzz -m none -b 43 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/mp42hls @@
+afl-fuzz -m none -b 43 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/mp42hls @@    
+
+<img width="450" alt="ab014d0d72b1733893f4c1bab7356d0" src="https://user-images.githubusercontent.com/76025773/201921777-0d13232c-c4cb-4579-a4cc-71be7f0fc095.png">
