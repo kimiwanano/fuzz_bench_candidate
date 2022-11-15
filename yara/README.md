@@ -11,3 +11,4 @@ cd yara-3.5.0
 ./bootstrap.sh     
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static    
 make all
+afl-fuzz -m none -b 42 -i afl-fuzz/in/ -o afl-fuzz/out/ ./yara @@ strings
