@@ -15,4 +15,7 @@ CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..
 make     
 make all
 * Reproduce:     
-afl-fuzz -m none -b 48 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/util/parse @@   
+afl-fuzz -m none -b 48 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/util/parse @@     
+
+<img width="447" alt="9e6c246e63a976f9c1933d78845618d" src="https://user-images.githubusercontent.com/76025773/202126470-70145c2e-aa9c-4403-8bf6-f42a0968d16a.png">
+
