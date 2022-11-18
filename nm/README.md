@@ -16,4 +16,4 @@ cd binutils-2.31.1
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static    
 make all     
 * Reproduce:     
-afl-fuzz -m none -i afl-fuzz-cxxfilt/in/ -o afl-fuzz-cxxfilt/out/ ./binutils/cxxfilt -n      
+afl-fuzz -m none -i afl-fuzz-nm-new/in/ -o afl-fuzz-nm-new/out/ ./binutils/nm-new -C @@     
