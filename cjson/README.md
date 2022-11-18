@@ -11,5 +11,7 @@ tar -xvf cjson-1.7.7.tar.gz
 cd cJSON-1.7.7/    
 CC=afl-clang-fast CXX=afl-clang-fast++ make    
 cd fuzzing/    
+CC=afl-clang-fast CXX=afl-clang-fast++ make     
 * Reproduce:     
-./afl.sh 
+(  ./afl.sh  )           
+afl-fuzz -m none -i afl-fuzz/in/ -o afl-fuzz/out/ ./fuzzing/cjson @@       
