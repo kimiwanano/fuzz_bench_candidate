@@ -1,7 +1,7 @@
 **tcpdump-4.9.2**
 * Bug type:    
 heap-overflow, infinite loop    
-* CVE ID: 
+* CVE ID:        
 https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=tcpdump    
 * Download && Compile:    
 apt-get install libpcap-dev    
