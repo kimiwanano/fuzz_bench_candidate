@@ -8,7 +8,8 @@ tar -xvf jasper-2.0.14.tar.gz
 cd jasper-2.0.14    
 mkdir BUILD    
 cd BUILD/    
-CC=afl-clang-fast CXX=afl-clang-fast++ cmake -G "Unix Makefiles" ..    
+CC=afl-clang-fast CXX=afl-clang-fast++ cmake -G "Unix Makefiles" ..       
+make all           
 * Reproduce:      
 afl-fuzz -m none -b 45 -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl/jasper --input @@ --output test.bmp --output-format bmp
 
