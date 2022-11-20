@@ -10,4 +10,4 @@ cd GraphicsMagick-1.3.26
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static    
 make all
 * Reproduce:     
-afl-fuzz -m none -i afl-fuzz/in/ -o afl-fuzz/out/ ./utilities/gm convert @@ /dev/null    
+afl-fuzz -m none -t 500 -b 50 -i afl-fuzz/in/ -o afl-fuzz/out/ ./utilities/gm convert @@ /dev/null    
