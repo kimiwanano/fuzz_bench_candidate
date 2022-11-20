@@ -3,6 +3,7 @@
 * CVE ID:    
 [CVE-2019-6293](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6293)   
 * Download && Compile:   
+apt-get install -y m4    
 wget https://github.com/westes/flex/files/981163/flex-2.6.4.tar.gz    
 tar -xvf flex-2.6.4.tar.gz    
 cd flex-2.6.4    
