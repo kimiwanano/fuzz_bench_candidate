@@ -12,4 +12,4 @@ cd audiofile-0.2.7
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static    
 make all    
 * Reproduce:     
-afl-fuzz -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfconvert @@ out.mp3 format aiff    
+afl-fuzz -m none -t 500 -b 51 -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfconvert @@ out.mp3 format aiff    
