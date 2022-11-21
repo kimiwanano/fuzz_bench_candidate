@@ -13,3 +13,5 @@ CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-sta
 make all    
 * Reproduce:     
 afl-fuzz -m none -t 500 -b 51 -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfconvert @@ out.mp3 format aiff    
+
+![image](https://user-images.githubusercontent.com/76025773/203090553-bf80f352-c069-4652-b71a-1222454c1696.png)
