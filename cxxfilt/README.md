@@ -15,3 +15,5 @@ CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-sta
 make all       
 * Reproduce:      
 afl-fuzz -m none -t 500 -b 54 -i afl-fuzz-cxxfilt/in/ -o afl-fuzz-cxxfilt/out/ ./binutils/cxxfilt -n    
+
+![image](https://user-images.githubusercontent.com/76025773/203093252-0eb74754-e586-49cc-8f52-e43a8e8bec83.png)
