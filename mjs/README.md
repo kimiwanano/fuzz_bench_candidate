@@ -3,6 +3,8 @@
 * CVE ID:    
 [CVE-2020-36366](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36366)    
 * Download && Compile:     
+git clone https://github.com/cesanta/mjs                 
+git checkout 2827bd00b59bdc176a010b22fc4acde9b580d6c2               
 afl-clang-fast mjs.c -DMJS_MAIN -o mjs.out -ldl
 * Reproduce:     
 afl-fuzz -m none -b 47 -i afl-fuzz/in/ -o afl-fuzz/out/ ./mjs.out @@    
