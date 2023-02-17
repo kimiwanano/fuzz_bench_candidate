@@ -11,8 +11,7 @@ cd yaml-cpp/
 git checkout 562aefc114938e388457e6a531ed7b54d9dc1b62    
 mkdir build      
 cd build/    
-CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..    
-make     
+CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..     
 make all
 * Reproduce:     
 afl-fuzz -m none -b 48 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/util/parse @@     
