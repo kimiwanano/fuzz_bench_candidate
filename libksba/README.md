@@ -12,7 +12,6 @@ cd libgpg-error-1.27
 ./configure --prefix=/usr --libdir=/usr/lib64   
 make   
 make install   
-  
 tar -xjf libksba-1.3.5.tar.bz2   
 cd libksba-1.3.5/   
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static   
