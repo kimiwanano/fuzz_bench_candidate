@@ -3,7 +3,7 @@
   
 * CVE ID:     			
    
-* Download && Compile:                   	          	  	
+* Download && Compile:                        	          	  	
 apt-get install libgpg-error-dev        	    		      
 tar -xjf libksba-1.3.5.tar.bz2          			
 cd libksba-1.3.5/       		
