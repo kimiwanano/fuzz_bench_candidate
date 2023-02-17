@@ -8,7 +8,7 @@ wget https://github.com/VirusTotal/yara/archive/refs/tags/v3.5.0.tar.gz
 mv v3.5.0.tar.gz yara-3.5.0.tar.gz    
 tar -xvf yara-3.5.0.tar.gz     
 cd yara-3.5.0    
-apt-get install autoconf automake libtool 
+apt-get install autoconf automake libtool       
 ./bootstrap.sh     
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static    
 make all    
