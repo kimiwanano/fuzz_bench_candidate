@@ -18,7 +18,7 @@ afl-fuzz -m none -t 5000 -b 42 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/mp42hls 
 ![mp42hls-24h测试结果](https://user-images.githubusercontent.com/76025773/221110907-c9ee7ef1-3480-4943-a77c-fde60f9e452a.png)
 
 * Coverage      
-cd coverage-analysis
+cd coverage-analysis            
 mkdir bento4-analysis          
 cd bento4-analysis       
 git clone https://github.com/axiomatic-systems/Bento4           
