@@ -19,7 +19,7 @@ afl-fuzz -m none -b 43 -t 5000 -i afl-fuzz/in/ -o afl-fuzz/out/ -x ./fuzzing/jso
 ![cjson-24h测试结果](https://user-images.githubusercontent.com/76025773/221084487-5448411c-8211-4790-a618-7359af043de5.png)
 
 * Coverage      
-cd coverage-analysis
+cd coverage-analysis          
 mkdir cjson-analysis          
 cd cjson-analysis       
 tar -xvf cjson-1.7.7.tar.gz           
