@@ -22,13 +22,14 @@ mkdir jasper-analysis
 cd jasper-analysis
 tar -xvf jasper-2.0.14.tar.gz     
 cd jasper-2.0.14    
-// 修改CMakeFile        
+// 修改CMakeFile                                            
 
 mkdir BUILD    
 cd BUILD/    
-CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake  -G "Unix Makefiles" .. 
-CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
-/afl-cov/afl-cov -d ../../jasper-2.0.14/afl-fuzz/out/ --coverage-cmd "./src/appl/jasper --input @@ --output test.bmp --output-format bmp -f AFL_FILE" -c /fuzz_bench/coverage-analysis/jasper-analysis/jasper-2.0.14/ --enable-branch-coverage
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake  -G "Unix Makefiles" ..                                                                    
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                         
+/afl-cov/afl-cov -d ../../jasper-2.0.14/afl-fuzz/out/ --coverage-cmd "./src/appl/jasper --input @@ --output test.bmp --output-format bmp -f AFL_FILE" -c /fuzz_bench/coverage-analysis/jasper-analysis/jasper-2.0.14/ --enable-branch-coverage                                            
+![b3d3651dfbe216a42abcb45fd43d3a4](https://user-images.githubusercontent.com/76025773/221227440-ac5f99ce-f0eb-4468-b9b2-e36625cb4f36.png)
 
 * Speed         
 afl-plot fuzz_out graph_fuzz_out              
