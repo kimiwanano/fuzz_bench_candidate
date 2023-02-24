@@ -16,6 +16,16 @@ afl-fuzz -m none -t 500 -b 51 -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfco
 
 ![image](https://user-images.githubusercontent.com/76025773/203090553-bf80f352-c069-4652-b71a-1222454c1696.png)
 
-* Coverage    
+* Coverage      
+cd coverage-analysis
+mkdir sfconvert-analysis          
+cd sfconvert-analysis       
+tar -xvf flex-2.6.4.tar.gz              
+cd flex-2.6.4                     
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                  
+cd sfcommands               
+make clean
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
+/afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert -f AFL_FILE"     
 
 ![image](https://user-images.githubusercontent.com/76025773/221090924-f239eb0b-f28e-4baf-9e48-44a8d42f498a.png)
