@@ -16,3 +16,10 @@ afl-fuzz -m none -t 5000 -b 44 -i afl-fuzz/in/ -o afl-fuzz/out/ ./src/flex @@
 ![flex-24h测试结果](https://user-images.githubusercontent.com/76025773/221085992-576c8456-713b-4cae-8d76-b220c39b3097.png)
 
 * Coverage      
+cd coverage-analysis
+mkdir flex-analysis          
+cd flex-analysis       
+tar -xvf flex-2.6.4.tar.gz              
+cd flex-2.6.4            
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                    
+/afl-cov/afl-cov -d ../flex-2.6.4/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/flex-analysis    /flex-2.6.4/ -e "cat AFL_FILE | ./src/flex"          
