@@ -24,7 +24,7 @@ cd bento4-analysis
 git clone https://github.com/axiomatic-systems/Bento4           
 git checkout 590312125c833bc496faf815c583cfd053509d2c             
 cd Bento4
-// 修改CMakeFile
+// 修改CMakeFile        
 ![ba546438493fb91e9a3fd3e45a80eee](https://user-images.githubusercontent.com/76025773/221110604-e7a22ea1-e4a3-4790-a7f8-1d8c203c5a30.png)               
 mkdir build         
 cd build        
