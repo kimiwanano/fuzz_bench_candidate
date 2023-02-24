@@ -24,8 +24,8 @@ tar -xvf flex-2.6.4.tar.gz
 cd flex-2.6.4                     
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                  
 cd sfcommands               
-make clean
-CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
-/afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert out.mp3 format aiff -f AFL_FILE"     
+make clean          
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all             
+/afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert out.mp3 format aiff -f AFL_FILE"           
 
 ![ce9510a9fa795200b05922c48d7b733](https://user-images.githubusercontent.com/76025773/221092059-0d9598d9-f3a7-4fa7-aaef-6c145833826b.png)
