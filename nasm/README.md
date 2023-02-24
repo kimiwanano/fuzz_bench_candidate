@@ -24,7 +24,7 @@ cd nasm-analysis
 tar -xvf nasm-2.14rc1-20180612.tar.gz                                                    
 cd nasm-2.14rc1-20180612                            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static           
-CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                 
 /afl-cov/afl-cov -d ../../nasm-2.14rc1-20180612/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/nasm-analysis/nasm-2.14rc1-20180612/ -e "./nasm -f bin @@ -o ./tmp -f AFL_FILE"         
 
 ![0ec79827de6ad4669e92d6fad8d30b8](https://user-images.githubusercontent.com/76025773/221214848-a18bacd6-548e-4091-b714-abbc8bceca28.png)
