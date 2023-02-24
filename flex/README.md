@@ -10,6 +10,9 @@ cd flex-2.6.4
 CC=afl-clang-fast CXX=afl-clang-fast++ ./configure --disable-shared --enable-static  
 make all
 * Reproduce:   
-afl-fuzz -m none -b 40 -i afl-fuzz/in/ -o afl-fuzz/out/ ./src/flex @@   
+afl-fuzz -m none -t 5000 -b 44 -i afl-fuzz/in/ -o afl-fuzz/out/ ./src/flex @@       
 
-![image](https://user-images.githubusercontent.com/76025773/201915136-120a433a-3d40-4fea-9ccc-ebe7d16560fa.png)
+![flex-24h测试界面](https://user-images.githubusercontent.com/76025773/221085998-6d7bcf88-c9e1-48b3-9713-c8f1559e73cb.png)
+![flex-24h测试结果](https://user-images.githubusercontent.com/76025773/221085992-576c8456-713b-4cae-8d76-b220c39b3097.png)
+
+* Coverage      
