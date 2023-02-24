@@ -31,3 +31,11 @@ CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
 
 ![66b2324142d648787d339987fc52ca9](https://user-images.githubusercontent.com/76025773/221088650-fa73e840-aa00-4746-95b8-dd63da51fffb.png)
 
+* Speed
+afl-plot fuzz_out graph_fuzz_out              
+
+![exec_speed](https://user-images.githubusercontent.com/76025773/221187967-7e90c2d2-d338-4b47-b223-2d93881f4e46.png)
+![high_freq](https://user-images.githubusercontent.com/76025773/221187978-47950ca2-9a69-43e3-b605-b12c0a6798df.png)
+![low_freq](https://user-images.githubusercontent.com/76025773/221187989-53091cb9-d6cc-4627-b304-a12929691c0c.png)
+
+
