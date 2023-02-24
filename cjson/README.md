@@ -29,4 +29,5 @@ cd fuzzing/
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all         
 /afl-cov/afl-cov -d ../cJSON-1.7.7/fuzzing/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/cjson-analysis/cjson-1.7.7/ -e "cat AFL_FILE | ./cjson"          
 
-![4af70950d082973c31a5ff9e73bdae4](https://user-images.githubusercontent.com/76025773/221084060-3030a9d5-ed8e-4f60-a82b-b0ff79ebafba.png)
+![66b2324142d648787d339987fc52ca9](https://user-images.githubusercontent.com/76025773/221088650-fa73e840-aa00-4746-95b8-dd63da51fffb.png)
+
