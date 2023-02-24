@@ -33,8 +33,8 @@ CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
 /afl-cov/afl-cov -d ../bento4/afl-fuzz/out/  --coverage-cmd "./mp42hls @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/bento4-analysis/Bento4/ --enable-branch-coverage              
 ![0f97e3a64f00d80bff7e58d7eeb0d42](https://user-images.githubusercontent.com/76025773/221111126-8d769089-1096-4ec8-bb79-e75a216f4a80.png)
 
-*Speed
-afl-plot fuzz_out graph_fuzz_out          
+*Speed            
+afl-plot fuzz_out graph_fuzz_out               
 ![exec_speed](https://user-images.githubusercontent.com/76025773/221187635-f9717d04-43e6-422e-bc27-789fee238c33.png)
 ![high_freq](https://user-images.githubusercontent.com/76025773/221187647-9d536ef2-b6fa-49bc-9345-1e5deec60ec2.png)
 ![low_freq](https://user-images.githubusercontent.com/76025773/221187660-363f7a19-92aa-412e-8f32-0a64961ed516.png)
