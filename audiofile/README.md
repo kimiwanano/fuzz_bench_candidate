@@ -29,3 +29,13 @@ CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
 /afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert out.mp3 format aiff -f AFL_FILE"           
 
 ![ce9510a9fa795200b05922c48d7b733](https://user-images.githubusercontent.com/76025773/221092059-0d9598d9-f3a7-4fa7-aaef-6c145833826b.png)
+
+* Speed     
+afl-plot fuzz_out graph_fuzz_out            
+
+![exec_speed](https://user-images.githubusercontent.com/76025773/221187377-e4ddac45-73e8-4c96-800f-f51b718e9527.png)
+
+![high_freq](https://user-images.githubusercontent.com/76025773/221187400-9b9363ab-1c30-4929-bd44-88ddfb97467e.png)
+
+![low_freq](https://user-images.githubusercontent.com/76025773/221187429-e778f02a-66d6-4b99-9ee0-bf34a8f4856b.png)
+
