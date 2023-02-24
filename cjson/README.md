@@ -15,8 +15,8 @@ CC=afl-clang-fast CXX=afl-clang-fast++ make all
 * Reproduce:     
 afl-fuzz -m none -b 43 -t 5000 -i afl-fuzz/in/ -o afl-fuzz/out/ -x ./fuzzing/json.dict ./fuzzing/cjson @@  
 
-![cjson-24h测试结果](https://user-images.githubusercontent.com/76025773/221084487-5448411c-8211-4790-a618-7359af043de5.png)
 ![cjson-24h测试界面](https://user-images.githubusercontent.com/76025773/221084498-f9fe8e4a-7b7f-4205-bd7f-4286ec18e4f4.png)
+![cjson-24h测试结果](https://user-images.githubusercontent.com/76025773/221084487-5448411c-8211-4790-a618-7359af043de5.png)
 
 * Coverage      
 cd coverage-analysis
