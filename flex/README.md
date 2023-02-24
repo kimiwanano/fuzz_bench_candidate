@@ -23,3 +23,9 @@ tar -xvf flex-2.6.4.tar.gz
 cd flex-2.6.4            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                    
 /afl-cov/afl-cov -d ../flex-2.6.4/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/flex-analysis    /flex-2.6.4/ -e "cat AFL_FILE | ./src/flex"          
+* Speed       
+afl-plot fuzz_out graph_fuzz_out          
+
+![exec_speed](https://user-images.githubusercontent.com/76025773/221188190-84bbd96f-f33c-4a2e-b00f-9baa58016cf3.png)
+![high_freq](https://user-images.githubusercontent.com/76025773/221188197-39a22d85-dbbd-4b94-bb69-8636f15935b3.png)
+![low_freq](https://user-images.githubusercontent.com/76025773/221188207-9256c19f-0c4a-4f62-a245-66b5efee8634.png)
