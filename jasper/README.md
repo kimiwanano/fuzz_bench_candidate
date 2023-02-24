@@ -15,3 +15,12 @@ afl-fuzz -m none -t 5000 -b 46 -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl
 
 ![jasper-24h测试界面](https://user-images.githubusercontent.com/76025773/221199253-a699ad54-dea0-47b0-b4a5-9a0cb224304c.png)
 ![jasper-24h测试结果](https://user-images.githubusercontent.com/76025773/221199257-e273c72b-24d6-4283-b5d4-99e74ef16a06.png)
+
+* Coverage          
+
+
+* Speed         
+afl-plot fuzz_out graph_fuzz_out              
+![exec_speed](https://user-images.githubusercontent.com/76025773/221224654-c141aecd-b348-4bd8-8282-7bd2294644fb.png)
+![high_freq](https://user-images.githubusercontent.com/76025773/221224664-fe809146-dc64-4359-8531-bcfdd9397b84.png)
+![low_freq](https://user-images.githubusercontent.com/76025773/221224675-842e174c-9320-4128-8335-2f7bd6c43f8d.png)
