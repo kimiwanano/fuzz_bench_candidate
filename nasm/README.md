@@ -17,11 +17,12 @@ afl-fuzz -m none -t 5000 -b 49 -i afl-fuzz/in/ -o afl-fuzz/out/ ./nasm -f bin @@
 ![nasm-24h测试结果](https://user-images.githubusercontent.com/76025773/221198414-117969c3-bbfd-4bc8-befc-5f116a25cece.png)
 
 
-* Coverage
-cd coverage-analysis mkdir sfconvert-analysis
-cd nasm-analysis
-tar -xvf nasm-2.14rc1-20180612.tar.gz           
-cd nasm-2.14rc1-20180612    
+* Coverage                                      
+cd coverage-analysis                     
+mkdir sfconvert-analysis                                            
+cd nasm-analysis                                            
+tar -xvf nasm-2.14rc1-20180612.tar.gz                                                    
+cd nasm-2.14rc1-20180612                            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
 /afl-cov/afl-cov -d ../../nasm-2.14rc1-20180612/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/nasm-analysis/nasm-2.14rc1-20180612/ -e "./nasm -f bin @@ -o ./tmp -f AFL_FILE"         
