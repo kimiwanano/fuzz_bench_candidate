@@ -17,7 +17,7 @@ afl-fuzz -m none -t 500 -b 51 -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfco
 ![image](https://user-images.githubusercontent.com/76025773/203090553-bf80f352-c069-4652-b71a-1222454c1696.png)
 
 * Coverage      
-cd coverage-analysis
+cd coverage-analysis          
 mkdir sfconvert-analysis          
 cd sfconvert-analysis       
 tar -xvf flex-2.6.4.tar.gz              
