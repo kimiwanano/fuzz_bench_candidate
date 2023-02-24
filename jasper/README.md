@@ -11,6 +11,7 @@ cd BUILD/
 CC=afl-clang-fast CXX=afl-clang-fast++ cmake -G "Unix Makefiles" ..       
 make all           
 * Reproduce:      
-afl-fuzz -m none -b 45 -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl/jasper --input @@ --output test.bmp --output-format bmp
+afl-fuzz -m none -t 5000 -b 46 -i afl-fuzz/in/ -o afl-fuzz/out/ ./BUILD/src/appl/jasper --input @@ --output test.bmp --output-format bmp
 
-![image](https://user-images.githubusercontent.com/76025773/202127288-5b60f806-5000-40fb-8875-5f469330f78a.png)
+![jasper-24h测试界面](https://user-images.githubusercontent.com/76025773/221199253-a699ad54-dea0-47b0-b4a5-9a0cb224304c.png)
+![jasper-24h测试结果](https://user-images.githubusercontent.com/76025773/221199257-e273c72b-24d6-4283-b5d4-99e74ef16a06.png)
