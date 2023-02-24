@@ -26,6 +26,6 @@ CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-sha
 cd sfcommands               
 make clean
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
-/afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert -f AFL_FILE"     
+/afl-cov/afl-cov -d ../sfconvert/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/sfconvert-analysis/audiofile-0.2.7/ -e "./sfconvert out.mp3 format aiff -f AFL_FILE"     
 
-![image](https://user-images.githubusercontent.com/76025773/221090924-f239eb0b-f28e-4baf-9e48-44a8d42f498a.png)
+![ce9510a9fa795200b05922c48d7b733](https://user-images.githubusercontent.com/76025773/221092059-0d9598d9-f3a7-4fa7-aaef-6c145833826b.png)
