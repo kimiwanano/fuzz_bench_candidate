@@ -15,3 +15,7 @@ make all
 afl-fuzz -m none -t 500 -b 51 -i afl-fuzz/in/ -o afl-fuzz/out/ ./sfcommands/sfconvert @@ out.mp3 format aiff    
 
 ![image](https://user-images.githubusercontent.com/76025773/203090553-bf80f352-c069-4652-b71a-1222454c1696.png)
+
+* Coverage    
+
+![image](https://user-images.githubusercontent.com/76025773/221090924-f239eb0b-f28e-4baf-9e48-44a8d42f498a.png)
