@@ -23,7 +23,7 @@ cd jasper-analysis
 tar -xvf jasper-2.0.14.tar.gz     
 cd jasper-2.0.14    
 // 修改CMakeFile                                            
-
+![e2ab42b4f4f5ba983720766a373b6b3](https://user-images.githubusercontent.com/76025773/221227795-963f75e5-f941-463c-940f-b6d5d519f13c.png)
 mkdir BUILD    
 cd BUILD/    
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake  -G "Unix Makefiles" ..                                                                    
