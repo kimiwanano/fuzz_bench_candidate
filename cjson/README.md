@@ -14,3 +14,15 @@ cd fuzzing/
 CC=afl-clang-fast CXX=afl-clang-fast++ make all              
 * Reproduce:     
 afl-fuzz -m none -b 53 -t 500 -i afl-fuzz/in/ -o afl-fuzz/out/ -x ./fuzzing/json.dict ./fuzzing/cjson @@                           
+* Coverage      
+cd coverage-analysis
+mkdir cjson-analysis          
+cd cjson-analysis       
+tar -xvf cjson-1.7.7.tar.gz           
+cd cJSON-1.7.7/       
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all         
+cd fuzzing/           
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
+/afl-cov/afl-cov -d ../cJSON-1.7.7/fuzzing/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/cjson-analysis/cjson-1.7.7/ -e "cat AFL_FILE | ./cjson"          
+
+![4af70950d082973c31a5ff9e73bdae4](https://user-images.githubusercontent.com/76025773/221084060-3030a9d5-ed8e-4f60-a82b-b0ff79ebafba.png)
