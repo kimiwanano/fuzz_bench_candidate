@@ -24,6 +24,8 @@ cd GraphicsMagick-1.3.26
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                     
 /afl-cov/afl-cov -d ../../GraphicsMagick-1.3.26/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/gm-analysis/GraphicsMagick-1.3.26/ -e "./utilities/gm convert @@ /dev/null -f AFL_FILE"                   
+![18b0e3090e6247949d20fa872db4d8f](https://user-images.githubusercontent.com/76025773/221351078-fa667e4f-fced-47c6-907f-6911074d007b.png)
+
 
 * Speed           
 afl-plot fuzz_out graph_fuzz_out                          
