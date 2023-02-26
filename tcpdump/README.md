@@ -25,6 +25,7 @@ cd tcpdump-4.9.2
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                                                                     
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                                                      
 /afl-cov/afl-cov -d ../../tcpdump-4.9.2/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/tcpdump-analysis/tcpdump-4.9.2/ -e "./tcpdump -nr @@ -f AFL_FILE"                             
+![b2b2c7ee6d42a88aa9a595ff62b3a25](https://user-images.githubusercontent.com/76025773/221412454-42db4e2c-e197-45bf-a2bb-1fb0d6acaeca.png)
 
 * Speed       
 afl-plot fuzz_out graph_fuzz_out                  
