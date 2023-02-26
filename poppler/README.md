@@ -17,4 +17,19 @@ apt-get install libopenjp2-7-dev
 CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..     
 make all
 * Reproduce:    
-afl-fuzz -m none -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/utils/pdftohtml @@    
+afl-fuzz -m none -t 5000 -b 45 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/utils/pdftohtml @@    
+
+![pdftohtml-24h测试界面](https://user-images.githubusercontent.com/76025773/221403381-fd4070b4-3c45-4145-b2de-f2d95677b2fd.png)
+![pdftohtml-24h测试结果](https://user-images.githubusercontent.com/76025773/221403385-794aed0e-cb74-4fe6-b835-6a9bd2d8a2f9.png)
+
+* Coverage                            
+cd coverage-analysis                              
+tar -xvf poppler-0.75.0.tar.xz                                
+cd poppler-0.75.0                                 
+// 修改CMakeFile                          
+![b9f47aedaeab86b8dd3ea473268d6a1](https://user-images.githubusercontent.com/76025773/221403314-3a02989e-7537-46d4-a05e-463acc21ce19.png)
+mkdir build                                   
+cd build/                           
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..                            
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                     
+/afl-cov/afl-cov -d ../../../poppler-0.75.0/build/afl-fuzz/out/ --coverage-cmd ".//utils/pdftohtml @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/poppler-0.75.0/ --enable-branch-coverage
