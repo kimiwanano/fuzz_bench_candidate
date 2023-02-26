@@ -32,7 +32,7 @@ mkdir build
 cd build/                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..                            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                     
-/afl-cov/afl-cov -d ../../../poppler-0.75.0/build/afl-fuzz/out/ --coverage-cmd ".//utils/pdftohtml @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/poppler-0.75.0/ --enable-branch-coverage
+/afl-cov/afl-cov -d ../../../poppler-0.75.0/build/afl-fuzz/out/ --coverage-cmd "./utils/pdftohtml @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/poppler-0.75.0/ --enable-branch-coverage
 
 * Speed             
 afl-plot fuzz_out graph_fuzz_out                      
