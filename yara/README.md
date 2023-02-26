@@ -19,7 +19,16 @@ afl-fuzz -m none -t 5000 -b 40 -i afl-fuzz/in/ -o afl-fuzz/out/ ./yara @@ string
 ![yara-24h测试结果](https://user-images.githubusercontent.com/76025773/221400749-ec1c073b-c615-4899-9ba5-287177639ef4.png)
 
 * Coverage              
+cd coverage-analysis
+mkdir yara-analysis
+cd yara-analysis
+tar -xvf yara-3.5.0.tar.gz   
+cd yara-3.5.0                                   
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
+/afl-cov/afl-cov -d ../../yara-3.5.0/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/yara-analysis/yara-3.5.0/ -e "./yara @@ strings  -f AFL_FILE"                      
 
+![f32331d6fcf5bef383728679b6bab3a](https://user-images.githubusercontent.com/76025773/221402088-24eacb20-75d3-45a9-b7fa-2948d9a326f6.png)
 
 * Speed     
 afl-plot fuzz_out graph_fuzz_out        
