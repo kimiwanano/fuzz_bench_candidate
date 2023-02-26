@@ -27,9 +27,15 @@ cd coverage-analysis
 tar -xvf poppler-0.75.0.tar.xz                                
 cd poppler-0.75.0                                 
 // 修改CMakeFile                          
-![b9f47aedaeab86b8dd3ea473268d6a1](https://user-images.githubusercontent.com/76025773/221403314-3a02989e-7537-46d4-a05e-463acc21ce19.png)
+![b9f47aedaeab86b8dd3ea473268d6a1](https://user-images.githubusercontent.com/76025773/221403314-3a02989e-7537-46d4-a05e-463acc21ce19.png)                       
 mkdir build                                   
 cd build/                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..                            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                     
 /afl-cov/afl-cov -d ../../../poppler-0.75.0/build/afl-fuzz/out/ --coverage-cmd ".//utils/pdftohtml @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/poppler-0.75.0/ --enable-branch-coverage
+
+* Speed             
+afl-plot fuzz_out graph_fuzz_out                      
+![exec_speed](https://user-images.githubusercontent.com/76025773/221403472-b9e2d152-f742-48aa-9bd2-59b3e631dfc0.png)
+![high_freq](https://user-images.githubusercontent.com/76025773/221403473-b4482041-a096-4b42-a3a2-bff5e808ec63.png)
+![low_freq](https://user-images.githubusercontent.com/76025773/221403476-0e1605bb-60ec-4eb2-b90d-a0723c82b6ab.png)
