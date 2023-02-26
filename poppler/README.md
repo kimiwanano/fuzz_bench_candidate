@@ -27,7 +27,7 @@ cd coverage-analysis
 tar -xvf poppler-0.75.0.tar.xz                                
 cd poppler-0.75.0                                 
 // 修改CMakeFile                          
-![e092d2387e7dda2b84146ebc13946a2](https://user-images.githubusercontent.com/76025773/221413064-8d3f7acd-a978-4833-8720-d6574c5dee27.png)
+![e092d2387e7dda2b84146ebc13946a2](https://user-images.githubusercontent.com/76025773/221413064-8d3f7acd-a978-4833-8720-d6574c5dee27.png)                 
 mkdir build                                   
 cd build/                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake ..                            
