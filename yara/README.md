@@ -23,7 +23,8 @@ cd coverage-analysis
 mkdir yara-analysis
 cd yara-analysis
 tar -xvf yara-3.5.0.tar.gz                          
-cd yara-3.5.0                                   
+cd yara-3.5.0            
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./bootstrap.sh                              
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" ./configure --disable-shared --enable-static                                             
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                                           
 /afl-cov/afl-cov -d ../../yara-3.5.0/afl-fuzz/out/ --enable-branch-coverage -c /fuzz_bench/coverage-analysis/yara-analysis/yara-3.5.0/ -e "./yara @@ strings  -f AFL_FILE"                      
