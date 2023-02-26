@@ -21,14 +21,16 @@ afl-fuzz -m none -t 5000 -b 42 -i afl-fuzz/in/ -o afl-fuzz/out/ ./build/util/par
 
 * Coverage          
 cd coverage-analysis
-git clone https://github.com/jbeder/yaml-cpp    
+git clone https://github.com/jbeder/yaml-cpp                        
 cd yaml-cpp/    
-git checkout 562aefc114938e388457e6a531ed7b54d9dc1b62  
-// 修改CMakeFile
-![3cb127d65a339898ce6b5e492f52b17](https://user-images.githubusercontent.com/76025773/221403008-f5313219-9f84-4989-a06e-bcbbe37291c7.png)
+git checkout 562aefc114938e388457e6a531ed7b54d9dc1b62                                   
+// 修改CMakeFile                                  
+![3cb127d65a339898ce6b5e492f52b17](https://user-images.githubusercontent.com/76025773/221403008-f5313219-9f84-4989-a06e-bcbbe37291c7.png)                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake ..
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all
-/afl-cov/afl-cov -d ../../../yaml-cpp/afl-fuzz/out/ --coverage-cmd "./util/parse @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/yaml-cpp/ --enable-branch-coverage
+/afl-cov/afl-cov -d ../../../yaml-cpp/afl-fuzz/out/ --coverage-cmd "./util/parse @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/yaml-cpp/ --enable-branch-coverage         
+![b779e81e094ee9cac34a1e84d03cdbd](https://user-images.githubusercontent.com/76025773/221412564-99473853-2234-4d06-a1b0-392940a20bae.png)
+
 
 * Speed           
 afl-plot fuzz_out graph_fuzz_out              
