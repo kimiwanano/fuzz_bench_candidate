@@ -27,10 +27,10 @@ cd coverage-analysis
 tar -xvf poppler-0.75.0.tar.xz                                
 cd poppler-0.75.0                                 
 // 修改CMakeFile                          
-![b9f47aedaeab86b8dd3ea473268d6a1](https://user-images.githubusercontent.com/76025773/221403314-3a02989e-7537-46d4-a05e-463acc21ce19.png)                       
+![e092d2387e7dda2b84146ebc13946a2](https://user-images.githubusercontent.com/76025773/221413064-8d3f7acd-a978-4833-8720-d6574c5dee27.png)
 mkdir build                                   
 cd build/                           
-CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" CC=afl-clang-fast CXX=afl-clang-fast++ cmake ..                            
+CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake ..                            
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                                     
 /afl-cov/afl-cov -d ../../../poppler-0.75.0/build/afl-fuzz/out/ --coverage-cmd "./utils/pdftohtml @@ -f AFL_FILE" -c /fuzz_bench/coverage-analysis/poppler-0.75.0/ --enable-branch-coverage
 
