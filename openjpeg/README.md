@@ -29,7 +29,7 @@ mkdir build
 cd build/                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake .. -DCMAKE_BUILD_TYPE=Release                    
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                     
-
+/afl-cov/afl-cov -d ../../../openjpeg-2.3.0/build/fuzz_out/ --coverage-cmd "./bin/opj_decompress -i @@ -o ./tmp.png -f AFL_FILE" -c /fuzz_bench/coverage-analysis/openjpeg-2.3.0/ --enable-branch-coverage                     
  ![opj_decompress-24h覆盖情况](https://user-images.githubusercontent.com/76025773/221478657-65d61f39-c363-4c1d-93bc-f3e1f549de6e.png)                       
 
 * Speed                     
