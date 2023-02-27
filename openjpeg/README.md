@@ -24,13 +24,15 @@ cd coverage-analysis
 tar -xvf openjpeg-2.3.0.tar.gz                                    
 cd openjpeg-2.3.0                         
 // 修改CMakeFile                          
-
+![44dd262f09625780093cb98b1c7ffcb](https://user-images.githubusercontent.com/76025773/221478618-393e7aa4-b9c6-4184-ac7d-e2c47f44a988.png)                             
 mkdir build                       
 cd build/                           
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" cmake .. -DCMAKE_BUILD_TYPE=Release                    
 CC=gcc CXX=g++ CFLAGS="-fprofile-arcs -ftest-coverage" make all                     
 
-* Speed     
+ ![opj_decompress-24h覆盖情况](https://user-images.githubusercontent.com/76025773/221478657-65d61f39-c363-4c1d-93bc-f3e1f549de6e.png)                       
+
+* Speed                     
 afl-plot fuzz_out graph_fuzz_out                      
 ![exec_speed](https://user-images.githubusercontent.com/76025773/221413738-ea3f5fe5-427c-48d6-8c63-1ce7edc1ecdd.png)
 ![high_freq](https://user-images.githubusercontent.com/76025773/221413739-7b054b2d-13b6-40bd-8ba9-6ad2ca22722e.png)
