@@ -32,3 +32,7 @@ afl-plot fuzz_out graph_fuzz_out
 ![exec_speed](https://user-images.githubusercontent.com/76025773/221346181-b722fd14-8ded-4bd4-b81f-3e780d46b853.png)
 ![high_freq](https://user-images.githubusercontent.com/76025773/221346186-c8445036-5b2b-4b9e-bc28-73998769afb1.png)
 ![low_freq](https://user-images.githubusercontent.com/76025773/221346188-0164e05d-4e45-4488-a57f-f375d3317839.png)
+
+* Crash               
+afl-collect -d crashes.db -e gdb_script -r -rr /fuzz_bench/GraphicsMagick-1.3.26/fuzz_out/ ./afl-collect -j 8 -- /fuzz_bench/GraphicsMagick-1.3.26/utilities/gm convert @@ /dev/null                                          
+![3ac2588cd72f30c7f39dd6edaab29ac](https://user-images.githubusercontent.com/76025773/226303729-b4eee893-5a9c-485c-9380-c1edbd4cb520.png)
