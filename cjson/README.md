@@ -2,7 +2,7 @@
 * Bug type: 
 out-of-bounds access
 * CVE ID:     
-[CVE-2019-11834](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11834) 
+[CVE-2019-11834](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11834)                       
 [CVE-2019-11835](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11834)
 * Download && Compile:    
 wget https://github.com/DaveGamble/cJSON/archive/refs/tags/v1.7.7.tar.gz    
